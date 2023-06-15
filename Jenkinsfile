@@ -26,6 +26,13 @@ pipeline {
                 }
             }
         }
+        stage("Deploy_DOCKER_IMAGE") {
+            steps {
+                script {
+                    mygvscript.deployImage()
+                }
+            }
+        }
     }
 }
  
