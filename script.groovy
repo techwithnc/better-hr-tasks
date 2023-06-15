@@ -3,7 +3,7 @@ def buildImage(){
     sh "docker image ls"
 }
 def pushImage(){
-    withCredentials([usernamePassword(credentialsId: 'dockerhub-token', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                         sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
                         sh "docker push techwithnc/betterhrapp:$IMAGE_NAME"
                     }
