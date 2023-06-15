@@ -20,13 +20,13 @@ pipeline {
                 }
             }
         }
-    //     stage("Push_IMAGE") {
-    //         steps {
-    //             script {
-    //                 mygvscript.pushImage()
-    //             }
-    //         }
-    //     }
+        stage("Push_DOCKER_IMAGE") {
+            steps {
+                script {
+                    mygvscript.pushImage()
+                }
+            }
+        }
     }
 }
  
