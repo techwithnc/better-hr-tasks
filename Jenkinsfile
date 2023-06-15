@@ -2,7 +2,7 @@ def mygvscript
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = ""
+        IMAGE_NAME = "1"
         APP_VERSION = ""
     }
     stages{
