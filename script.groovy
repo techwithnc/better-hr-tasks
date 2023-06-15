@@ -1,8 +1,5 @@
-def buildApp() {
-    sh "mvn clean package"
-}
 def buildImage(){
-    sh "docker build -t techwithnc/simple-java-app:$IMAGE_NAME ."
+    sh "docker build -t techwithnc/betterhrapp:$IMAGE_NAME ."
     sh "docker image ls"
 }
 def pushImage(){

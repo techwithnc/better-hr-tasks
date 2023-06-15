@@ -2,7 +2,7 @@ def mygvscript
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "1"
+        IMAGE_NAME = "4"
         APP_VERSION = ""
     }
     stages{
@@ -13,22 +13,13 @@ pipeline {
                 }
             }
         }
-    //     stage("Build_App"){
-    //         steps{
-    //             script{
-    //                 mygvscript.buildApp()
-    //                 APP_VERSION = readMavenPom().getVersion()
-    //                 IMAGE_NAME = "${APP_VERSION}-${env.BUILD_ID}"
-    //             }
-    //         }
-    //     }
-    //     stage("Build_IMAGE"){
-    //         steps {
-    //             script {
-    //                 mygvscript.buildImage()
-    //             }
-    //         }
-    //     }
+        stage("Build_DOCKER_IMAGE"){
+            steps {
+                script {
+                    mygvscript.buildImage()
+                }
+            }
+        }
     //     stage("Push_IMAGE") {
     //         steps {
     //             script {
