@@ -13,7 +13,7 @@ def deployImage(){
                     sshagent(['SSH_KEY_FILE']) {
                         sshCommand remote: "ssh -o StrictHostKeyChecking=no $SSH_USERNAME@35.182.131.225",
                             command: '''
-                                sudo docker image pull techwithnc/betterhrapp:5.0
+                                echo "hello"
                             '''                  
                     }
                 }
