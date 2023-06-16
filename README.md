@@ -1,2 +1,2 @@
 # better-hr-tasks
-Devops tasks assignment for Better HR.
+Devops tasks assignment from Better HR company.
