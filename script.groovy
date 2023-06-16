@@ -18,6 +18,7 @@ def pushImage(){
 //                     }
 //                 }
 // }
+//
 def deployImage(){
     def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
     sshagent(['svr01-ssh']){
