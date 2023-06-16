@@ -11,7 +11,6 @@ def deployImage(){
     def shellcmd = "bash scripts.sh ${APP_VERSION}"
     def svr = "ubuntu@3.96.169.134"
     sshagent(['awssvrssh']){
-        sh "ls -al"
         sh "scp ./CI_CD/scripts.sh ${svr}:/home/ubuntu "
         sh "ssh -o StrictHostKeyChecking=no ${svr} ${shellcmd}"
     }
