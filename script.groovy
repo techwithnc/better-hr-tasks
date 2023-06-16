@@ -18,7 +18,7 @@ def deployImage(){
                     }
                 }
 }
-//
+///
 //
 // def deployImage(){
 //     // def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
