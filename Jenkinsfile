@@ -2,7 +2,7 @@ def mygvscript
 pipeline {
     agent any
     environment {
-        APP_VERSION = "5.0"
+        APP_VERSION = "6.0"
     }
     stages{
         stage("Prepare"){
@@ -12,20 +12,20 @@ pipeline {
                 }
             }
         }
-        // stage("Build_DOCKER_IMAGE"){
-        //     steps {
-        //         script {
-        //             mygvscript.buildImage()
-        //         }
-        //     }
-        // }
-        // stage("Push_DOCKER_IMAGE") {
-        //     steps {
-        //         script {
-        //             mygvscript.pushImage()
-        //         }
-        //     }
-        // }
+        stage("Build_DOCKER_IMAGE"){
+            steps {
+                script {
+                    mygvscript.buildImage()
+                }
+            }
+        }
+        stage("Push_DOCKER_IMAGE") {
+            steps {
+                script {
+                    mygvscript.pushImage()
+                }
+            }
+        }
         stage("Deploy_DOCKER_IMAGE") {
             steps {
                 script {

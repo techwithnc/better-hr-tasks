@@ -8,22 +8,12 @@ def pushImage(){
                         sh "docker push techwithnc/betterhrapp:$APP_VERSION"
                     }
 }
-// def deployImage(){
-//     withCredentials([sshUserPrivateKey(credentialsId: 'svrssh', keyFileVariable: 'SSH_KEY_FILE', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
-//                     sshagent(['SSH_KEY_FILE']) {
-//                         sshCommand remote: "ssh -o StrictHostKeyChecking=no $SSH_USERNAME@3.96.169.134",
-//                             command:'''
-//                                 printenv
-//                             '''       
-//                     }
-//                 }
-// }
-
 def deployImage(){
-    def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
+    def shellcmd = "bash ./scripts.sh ${APP_VERSION}"
+    def svr = "ubuntu@3.96.169.134"
     sshagent(['awssvrssh']){
-       sh "ssh -o StrictHostKeyChecking=no ubuntu@3.96.169.134 ${dockerRun}"
+        sh "scp scripts.sh ${svr}:/home/ubuntu "
+        sh "ssh -o StrictHostKeyChecking=no ${svr} ${shellcmd}"
     }
 }
-// 
 return this
