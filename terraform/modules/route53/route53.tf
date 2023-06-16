@@ -1,6 +1,6 @@
 resource "aws_route53_record" "app01" {
   zone_id = "${var.hosted_zone_id}"
-  name    = "chat"
+  name    = "devops"
   type    = "A"
   alias {
     name = "${var.lb_dns_name}"
@@ -9,7 +9,7 @@ resource "aws_route53_record" "app01" {
   }
 }
 resource "aws_acm_certificate" "cert01" {
-  domain_name       = "chat.techwithnc.net"
+  domain_name       = "devops.techwithnc.net"
   validation_method = "DNS"
 
   tags = {

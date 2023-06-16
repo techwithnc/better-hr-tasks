@@ -13,4 +13,4 @@ apt update
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 apt update 
 apt install -y stress
-docker container run -p 8080:8080 techwithnc/betterhrapp:1.0
+docker container run -p 8080:8080 techwithnc/betterhrapp:devops
