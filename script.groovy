@@ -21,9 +21,9 @@ def pushImage(){
 //
 //
 def deployImage(){
-    def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
+    // def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
     sshagent(['svr01-ssh']){
-       sh "ssh -o StrictHostKeyChecking=no ubuntu@99.79.67.178 ${dockerRun}"
+       sh "ssh -o StrictHostKeyChecking=no ubuntu@3.96.169.134 echo"
     }
 }
 return this
