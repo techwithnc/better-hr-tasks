@@ -8,7 +8,7 @@ pipeline {
         stage("Prepare"){
             steps{
                 script{
-                    mygvscript = load "script.groovy"
+                    mygvscript = load "./CI_CD/script.groovy"
                 }
             }
         }
