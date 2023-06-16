@@ -13,7 +13,7 @@ def deployImage(){
                     sshagent(['SSH_KEY_FILE']) {
                         sshCommand remote: "ssh -o StrictHostKeyChecking=no $SSH_USERNAME@3.96.169.134",
                             command:'''
-                                echo "hello"
+                                printenv
                             '''       
                     }
                 }
