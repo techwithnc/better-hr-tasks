@@ -25,4 +25,5 @@ def deployImage(){
        sh "ssh -o StrictHostKeyChecking=no ubuntu@3.96.169.134 echo"
     }
 }
+// 
 return this
