@@ -8,7 +8,7 @@ def pushImage(){
                     }
 }
 def deployImage(){
-    def shellcmd = "bash ./CI_CD/scripts.sh ${APP_VERSION}"
+    def shellcmd = "bash CI_CD/scripts.sh ${APP_VERSION}"
     def svr = "ubuntu@3.96.169.134"
     sshagent(['awssvrssh']){
         sh "ls -al"
