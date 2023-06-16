@@ -12,20 +12,20 @@ pipeline {
                 }
             }
         }
-        stage("Build_DOCKER_IMAGE"){
-            steps {
-                script {
-                    mygvscript.buildImage()
-                }
-            }
-        }
-        stage("Push_DOCKER_IMAGE") {
-            steps {
-                script {
-                    mygvscript.pushImage()
-                }
-            }
-        }
+        // stage("Build_DOCKER_IMAGE"){
+        //     steps {
+        //         script {
+        //             mygvscript.buildImage()
+        //         }
+        //     }
+        // }
+        // stage("Push_DOCKER_IMAGE") {
+        //     steps {
+        //         script {
+        //             mygvscript.pushImage()
+        //         }
+        //     }
+        // }
         stage("Deploy_DOCKER_IMAGE") {
             steps {
                 script {
