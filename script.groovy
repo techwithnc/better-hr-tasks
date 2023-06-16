@@ -20,9 +20,9 @@ def pushImage(){
 // }
 
 def deployImage(){
-    // def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
+    def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
     sshagent(['awssvrssh']){
-       sh "ssh -o StrictHostKeyChecking=no ubuntu@3.96.169.134 echo"
+       sh "ssh -o StrictHostKeyChecking=no ubuntu@3.96.169.134 ${dockerRun}"
     }
 }
 // 
