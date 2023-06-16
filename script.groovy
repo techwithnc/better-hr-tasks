@@ -8,22 +8,22 @@ def pushImage(){
                         sh "docker push techwithnc/betterhrapp:$APP_VERSION"
                     }
 }
-def deployImage(){
-    withCredentials([sshUserPrivateKey(credentialsId: 'svrssh', keyFileVariable: 'SSH_KEY_FILE', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
-                    sshagent(['SSH_KEY_FILE']) {
-                        sshCommand remote: "ssh -o StrictHostKeyChecking=no $SSH_USERNAME@3.96.169.134",
-                            command: '''
-                                echo "hello"
-                            '''                  
-                    }
-                }
-}
+// def deployImage(){
+//     withCredentials([sshUserPrivateKey(credentialsId: 'svrssh', keyFileVariable: 'SSH_KEY_FILE', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
+//                     sshagent(['SSH_KEY_FILE']) {
+//                         sshCommand remote: "ssh -o StrictHostKeyChecking=no $SSH_USERNAME@3.96.169.134",
+//                             command: '''
+//                                 echo "hello"
+//                             '''                  
+//                     }
+//                 }
+// }
 ///
 //
-// def deployImage(){
-//     // def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
-//     sshagent(['svr01-ssh']){
-//        sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.96.169.134 echo'
-//     }
-// }
+def deployImage(){
+    // def dockerRun = 'sudo docker image pull techwithnc/betterhrapp:5.0'
+    sshagent(['svr01-ssh']){
+       sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.96.169.134 echo'
+    }
+}
 return this
