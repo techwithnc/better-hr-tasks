@@ -9,7 +9,7 @@ def pushImage(){
                     }
 }
 def deployImage(){
-    withCredentials([sshUserPrivateKey(credentialsId: 'awssvrssh', keyFileVariable: 'SSH_KEY_FILE', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
+    withCredentials([sshUserPrivateKey(credentialsId: 'svrssh', keyFileVariable: 'SSH_KEY_FILE', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
                     sshagent(['SSH_KEY_FILE']) {
                         sshCommand remote: "ssh -o StrictHostKeyChecking=no $SSH_USERNAME@3.96.169.134",
                             command:
