@@ -1,4 +1,3 @@
-#  module for networking
 resource "aws_vpc" "vpc01" {
   cidr_block       = "${var.vpc_cidr}"
   instance_tenancy = "${var.tenancy}"

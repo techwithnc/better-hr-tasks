@@ -1,4 +1,5 @@
-// Variable values for Better HR task assignment.
+// Variable values for Better HR devops task assignment.
+
 ami_id = "ami-0df7a207adb9748c7" // singapore-region
 ec2_type = "t2.micro"
 avail_zones = ["ap-southeast-1b", "ap-southeast-1c"]
