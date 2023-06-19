@@ -115,10 +115,3 @@ resource "aws_route_table_association" "public02" {
   subnet_id      = aws_subnet.public_subnet02.id
   route_table_id = aws_route_table.public.id
 }
-
-resource "aws_eip" "eip01" {
-  tags = {
-    Name    = "elastic_ip01"
-  }
-}
-
